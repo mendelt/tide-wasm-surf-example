@@ -1,0 +1,14 @@
+version: '3'
+services:
+  wasm-example-database:
+    image: "postgres:latest"
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: exampledbuser
+      POSTGRES_PASSWORD: <your password here>
+      POSTGRES_DB: exampledb
+    volumes:
+      - example-data:/var/lib/patchnut/data/
+volumes:
+  example-data:
